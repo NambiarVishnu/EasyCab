@@ -5,10 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -18,6 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class Booking {
 
     @Id
@@ -36,9 +34,9 @@ public class Booking {
     private double billAmount;
 
     @CreationTimestamp
-    Date bookedAt;
+    private Date bookedAt;
 
     @UpdateTimestamp
-    Date lastUpdateAt;
+    private Date lastUpdateAt;
 
 }
