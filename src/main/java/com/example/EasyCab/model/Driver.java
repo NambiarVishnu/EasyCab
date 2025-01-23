@@ -1,10 +1,7 @@
 package com.example.EasyCab.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Builder
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +20,7 @@ public class Driver {
 
     private String name;
     private int age;
-
+@Column(unique = true,nullable = false)
     private String emailId;
 
     @OneToMany(cascade = CascadeType.ALL)

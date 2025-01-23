@@ -2,9 +2,12 @@ package com.example.EasyCab.controller;
 
 import com.example.EasyCab.Enum.Gender;
 import com.example.EasyCab.dto.request.CustomerRequest;
+import com.example.EasyCab.dto.request.DriverRequest;
 import com.example.EasyCab.dto.response.CustomerResponse;
+import com.example.EasyCab.dto.response.DriverResponse;
 import com.example.EasyCab.model.Customer;
 import com.example.EasyCab.service.CustomerService;
+import com.example.EasyCab.service.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
+
 
     @Autowired
     CustomerService customerService;
