@@ -1,2 +1,18 @@
-package com.example.EasyCab.dto.response;public class CustomerResponse {
+package com.example.EasyCab.dto.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class CustomerResponse {
+    private String name;
+
+    private int age;
+
+    private String emailId;
 }
