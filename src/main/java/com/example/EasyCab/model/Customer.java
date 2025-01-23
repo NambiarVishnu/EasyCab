@@ -1,12 +1,14 @@
 package com.example.EasyCab.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,4 +26,7 @@ public class Customer {
     private String emailId;
 
     private Gender gender;
+    @OneToMany(cascade = CascadeType.ALL)
+            @JoinColumn(name="customer_id")
+    List<Booking> bookings =new ArrayList<>();
 }
