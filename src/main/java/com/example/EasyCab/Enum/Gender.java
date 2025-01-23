@@ -1,4 +1,4 @@
-package com.example.EasyCab.model;
+package com.example.EasyCab.Enum;
 
 public enum Gender {
     MALE,
