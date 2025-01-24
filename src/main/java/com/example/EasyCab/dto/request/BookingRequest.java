@@ -15,4 +15,5 @@ public class BookingRequest {
 
     private double tripDistanceInKm;
     private TripStatus tripStaus;
+    private double billAmount;
 }

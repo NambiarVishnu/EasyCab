@@ -1,6 +1,8 @@
 package com.example.EasyCab.dto.response;
 
 import com.example.EasyCab.Enum.TripStatus;
+import com.example.EasyCab.model.Cab;
+import com.example.EasyCab.model.Customer;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -27,8 +29,8 @@ public class BookingResponse {
 
     private Date lastUpdateAt;
 
-    private CustomerResponse customerResponse;
+    private CustomerResponse customer;
 
-    private CabResponse cabResponse;
+    private CabResponse cab;
 
 }

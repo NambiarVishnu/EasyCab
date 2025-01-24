@@ -11,12 +11,13 @@ import com.example.EasyCab.model.Driver;
 public class BookingTransformer {
 
     public static Booking bookingRequestToBooking(BookingRequest bookingRequest, double perKmRate){
-        BookingRequest.builder()
+        return Booking.builder()
                 .pickup(bookingRequest.getPickup())
                 .destination(bookingRequest.getDestination())
                 .tripDistanceInKm(bookingRequest.getTripDistanceInKm())
-                .tripStaus(TripStatus.STARTED)
+                .tripStatus(TripStatus.STARTED)
                 .billAmount(bookingRequest.getTripDistanceInKm()*perKmRate).build();
+
 
     }
 
@@ -29,7 +30,7 @@ public class BookingTransformer {
                         .billAmount(booking.getBillAmount())
                                 .bookedAt(booking.getBookedAt())
                 .lastUpdateAt(booking.getLastUpdateAt())
-                        .customerResponse(CustomerTransfromer.CustomerToCustomerResponse(customer))
+                        .customer(CustomerTransfromer.CustomerToCustomerResponse(customer))
                 .cab(CabTransfromer.cabToCabResponse(cab,driver)).build();
     }
 }
